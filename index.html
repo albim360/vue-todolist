@@ -32,6 +32,7 @@
                 id="inputPassword"
                 placeholder="Nuova cosa da fare..."
                 v-model="inputValue"
+                @keyup.enter = 'addTask'
               />
             </div>
             <div class="col-auto">
