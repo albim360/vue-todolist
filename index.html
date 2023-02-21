@@ -17,8 +17,7 @@
         </div>
         <div class="container py-3">
           <div class="mb-3 row">
-            <label for="inputPassword" class="col-auto col-form-label"
-              >Aggiungi task</label>
+            <label for="inputPassword" class="col-auto col-form-label">Aggiungi task</label>
             <div class="col">
               <input type="text" class="form-control" id="inputPassword" placeholder="Nuova cosa da fare..." v-model="inputValue" @keyup.enter="addTask"/>
             </div>
@@ -30,7 +29,7 @@
         <div class="container">
           <div class="card">
             <ul class="list-group list-group-flush">
-              <li v-for="(task,index) in tasks" :key="index" class="list-group-item":class="{done: task.done}" @mouseover="task.showCloseIcon = true"  @mouseleave="task.showCloseIcon = false">
+              <li v-for="(task,index) in tasks" :key="index" class="list-group-item" :class="{done: task.done}" @mouseover="task.showCloseIcon = true"  @mouseleave="task.showCloseIcon = false">
                 {{ task.text }}
                 <i class="fa-solid fa-trash-can" v-if="task.showCloseIcon" @click="removeTask(index)"></i>
               </li>
@@ -40,10 +39,7 @@
       </section>
     </div>
 
-    <script
-      src="https://kit.fontawesome.com/0f02baec12.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/0f02baec12.js" crossorigin="anonymous"></script>
     <script src="./js/app.js"></script>
   </body>
 </html>
