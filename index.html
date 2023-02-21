@@ -29,11 +29,32 @@
         <div class="container">
           <div class="card">
             <ul class="list-group list-group-flush">
-              <li v-for="(task,index) in tasks" :key="index" class="list-group-item" :class="{done: task.done}" @mouseover="task.showCloseIcon = true"  @mouseleave="task.showCloseIcon = false">
-                {{ task.text }}
-                <i class="fa-solid fa-trash-can" v-if="task.showCloseIcon" @click="removeTask(index)"></i>
-              </li>
-            </ul>
+                <li
+                  v-for="(task, index) in tasks"
+                  :key="index"
+                  class="list-group-item"
+                  :class="{ done: task.completed }"
+                  @mouseover="task.showCloseIcon = true"
+                  @mouseleave="task.showCloseIcon = false"
+                >
+                  <div class="form-check">
+                    <input
+                      class="form-check-input d-inline"
+                      type="checkbox"
+                      :id="'task-'+index"
+                      v-model="task.completed"
+                    />
+                    <label class="form-check-label d-inline" :for="'task-'+index">
+                      {{ task.text }}
+                    </label>
+                  </div>
+                  <i
+                    class="fa-solid fa-trash-can d-inline"
+                    v-if="task.showCloseIcon"
+                    @click="removeTask(index)"
+                  ></i>
+                </li>
+              </ul>          
           </div>
         </div>
       </section>

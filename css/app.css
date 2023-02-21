@@ -1,4 +1,11 @@
-li.list-group-item {
+/* li.list-group-item {
     display: flex;
     justify-content: space-between;
-}
+} */
+
+.done {
+    text-decoration: line-through !important;
+  }
+  
+
+  
